@@ -4,7 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -16,7 +19,6 @@ import androidx.work.Constraints
 import androidx.work.PeriodicWorkRequest
 import androidx.work.WorkManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.premp.todonotesapp.AddNotesActivity
 import com.premp.todonotesapp.NotesApp
 import com.premp.todonotesapp.R
 import com.premp.todonotesapp.adapter.NotesAdapter
@@ -157,6 +159,21 @@ class MyNotesActivity : AppCompatActivity() {
             listNotes.add(notes)
             recyclerViewNotes.adapter?.notifyItemChanged(listNotes.size - 1)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.blogs) {
+            Log.d(TAG, "Blog clicked")
+            val intent = Intent(this@MyNotesActivity, BlogActivity::class.java)
+            startActivity(intent)
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun setupToolbarText() {

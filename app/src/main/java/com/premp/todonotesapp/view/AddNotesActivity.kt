@@ -1,4 +1,4 @@
-package com.premp.todonotesapp
+package com.premp.todonotesapp.view
 
 import android.app.Activity
 import android.content.Intent
@@ -17,6 +17,8 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.bumptech.glide.Glide
+import com.premp.todonotesapp.BuildConfig
+import com.premp.todonotesapp.R
 import com.premp.todonotesapp.utils.AppConstant
 import java.io.File
 import java.text.SimpleDateFormat
