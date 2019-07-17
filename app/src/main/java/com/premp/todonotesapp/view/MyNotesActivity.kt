@@ -170,7 +170,7 @@ class MyNotesActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item?.itemId == R.id.blogs) {
             Log.d(TAG, "Blog clicked")
-            val intent = Intent(this@MyNotesActivity, BlogActivity::class.java)
+            val intent = Intent(this@MyNotesActivity, BlogsActivity::class.java)
             startActivity(intent)
         }
         return super.onOptionsItemSelected(item)

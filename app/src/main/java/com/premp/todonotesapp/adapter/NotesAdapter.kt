@@ -46,6 +46,6 @@ class NotesAdapter(private val listNotes: List<Notes>, private val itemClickList
         val textViewTitle: TextView = itemView.findViewById(R.id.textViewTitle)
         val textViewDescription: TextView = itemView.findViewById(R.id.textViewDescription)
         val checkBoxMarkStatus: CheckBox = itemView.findViewById(R.id.checkboxMarkStatus)
-        val imageView: ImageView = itemView.findViewById(R.id.imageView)
+        val imageView: ImageView = itemView.findViewById(R.id.notesImageView)
     }
 }

@@ -21,7 +21,7 @@
       android:layout_marginStart="16dp"
       android:layout_marginEnd="16dp"
       android:textAppearance="@style/TextAppearance.AppCompat.Large"
-      app:layout_constraintEnd_toStartOf="@+id/imageView"
+      app:layout_constraintEnd_toStartOf="@id/notesImageView"
       app:layout_constraintStart_toEndOf="@id/checkboxMarkStatus"
       app:layout_constraintTop_toTopOf="parent"
       tools:text="Title"/>
@@ -32,9 +32,9 @@
       android:layout_marginTop="16dp"
       android:layout_marginBottom="16dp"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="@+id/textViewTitle"
-      app:layout_constraintStart_toStartOf="@+id/textViewTitle"
-      app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+      app:layout_constraintEnd_toEndOf="@id/textViewTitle"
+      app:layout_constraintStart_toStartOf="@id/textViewTitle"
+      app:layout_constraintTop_toBottomOf="@id/textViewTitle"
       tools:text="Description"/>
 
     <CheckBox
@@ -44,18 +44,18 @@
       android:layout_marginTop="8dp"
       android:layout_marginBottom="8dp"
       android:layout_marginStart="8dp"
-      app:layout_constraintBottom_toBottomOf="@+id/textViewDescription"
+      app:layout_constraintBottom_toBottomOf="@id/textViewDescription"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/textViewTitle"/>
+      app:layout_constraintTop_toTopOf="@id/textViewTitle"/>
 
     <ImageView
-      android:id="@+id/imageView"
+      android:id="@+id/notesImageView"
       android:layout_width="40dp"
       android:layout_height="40dp"
       android:layout_marginEnd="16dp"
-      app:layout_constraintBottom_toBottomOf="@+id/textViewDescription"
+      app:layout_constraintBottom_toBottomOf="@id/textViewDescription"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/textViewTitle"/>
+      app:layout_constraintTop_toTopOf="@id/textViewTitle"/>
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 
