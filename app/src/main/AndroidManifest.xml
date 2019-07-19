@@ -45,7 +45,10 @@
       </intent-filter>
     </activity>
 
-    <activity android:name=".onboarding.OnBoardingActivity"/>
+    <activity
+      android:name=".onboarding.OnBoardingActivity"
+      android:theme="@style/NoToolbar"/>
+
     <activity android:name=".view.BlogsActivity"/>
     <activity android:name=".view.AddNotesActivity"/>
     <activity android:name=".view.MyNotesActivity"/>
