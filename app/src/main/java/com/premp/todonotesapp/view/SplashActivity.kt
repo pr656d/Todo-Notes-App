@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.iid.FirebaseInstanceId
 import com.premp.todonotesapp.R
+import com.premp.todonotesapp.onboarding.OnBoardingActivity
 import com.premp.todonotesapp.utils.PrefConstant
 
 class SplashActivity : AppCompatActivity() {
@@ -47,14 +48,20 @@ class SplashActivity : AppCompatActivity() {
 
     private fun checkLoginStatus() {
         val isLoggedIn = sharedPreferences.getBoolean(PrefConstant.IS_LOGGED_IN, false)
-        if (isLoggedIn) {
-            // Open My Notes Activity
-            val intent = Intent(this@SplashActivity, MyNotesActivity::class.java)
-            startActivity(intent)
-        } else {
-            // Open Login Activity
-            val intent = Intent(this@SplashActivity, LoginActivity::class.java)
-            startActivity(intent)
-        }
+        val isBoardingSuccess = sharedPreferences.getBoolean(PrefConstant.ON_BOARDED_SUCCESSFULLY, false)
+
+        val intent =
+                when {
+                    // If logged in open My Notes Activity.
+                    isLoggedIn -> Intent(this@SplashActivity, MyNotesActivity::class.java)
+
+                    // If boarded successfully then Login Activity.
+                    isBoardingSuccess -> Intent(this@SplashActivity, LoginActivity::class.java)
+
+                    // If not boarded then Boarding Activity.
+                    else -> Intent(this@SplashActivity, OnBoardingActivity::class.java)
+                }
+
+        startActivity(intent)
     }
 }

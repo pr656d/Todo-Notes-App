@@ -19,14 +19,6 @@
     android:theme="@style/AppTheme"
     tools:ignore="GoogleAppIndexingWarning">
 
-    <activity android:name=".onboarding.OnBoardingActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
-
-        <category android:name="android.intent.category.LAUNCHER"/>
-      </intent-filter>
-    </activity>
-
     <provider
       android:authorities="${applicationId}.provider"
       android:exported="false"
@@ -45,9 +37,17 @@
       </intent-filter>
     </service>
 
-    <activity android:name=".view.BlogsActivity" />
+    <activity android:name=".view.SplashActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+
+    <activity android:name=".onboarding.OnBoardingActivity"/>
+    <activity android:name=".view.BlogsActivity"/>
     <activity android:name=".view.AddNotesActivity"/>
-    <activity android:name=".view.SplashActivity"/>
     <activity android:name=".view.MyNotesActivity"/>
     <activity android:name=".view.LoginActivity"/>
     <activity android:name=".view.MainActivity"/>

@@ -1,5 +1,6 @@
 package com.premp.todonotesapp.onboarding
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,12 @@ import com.premp.todonotesapp.R
 class OnBoardingOneFragment : Fragment() {
 
     lateinit var textViewNext: TextView
+    lateinit var onNextClick: OnNextClick
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        onNextClick = context as OnNextClick
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -25,6 +32,17 @@ class OnBoardingOneFragment : Fragment() {
 
     private fun bindView(view: View) {
         textViewNext = view.findViewById(R.id.textViewNext)
+        clickListeners()
+    }
+
+    private fun clickListeners() {
+        textViewNext.setOnClickListener {
+            onNextClick.onClick()
+        }
+    }
+
+    interface OnNextClick {
+        fun onClick()
     }
 
 }
