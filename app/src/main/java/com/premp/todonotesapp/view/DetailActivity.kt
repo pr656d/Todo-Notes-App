@@ -3,13 +3,13 @@ package com.premp.todonotesapp.view
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.premp.todonotesapp.utils.AppConstant
 import com.premp.todonotesapp.R
+import com.premp.todonotesapp.utils.AppConstant
 
 class DetailActivity : AppCompatActivity() {
 
-    lateinit var textViewTitle: TextView
-    lateinit var textViewDescription: TextView
+    private lateinit var textViewTitle: TextView
+    private lateinit var textViewDescription: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

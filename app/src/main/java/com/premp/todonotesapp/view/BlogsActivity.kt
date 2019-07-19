@@ -15,18 +15,18 @@ import com.premp.todonotesapp.model.JsonResponse
 
 class BlogsActivity : AppCompatActivity() {
 
-    val TAG = "BlogsActivity"
+    private val TAG = "BlogsActivity"
 
-    lateinit var recyclerViewBlogs: RecyclerView
+    private lateinit var recyclerViewBlogs: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_blogs)
         bindViews()
-        getBlogs()
+        getBlog()
     }
 
-    private fun getBlogs() {
+    private fun getBlog() {
         AndroidNetworking.get("http://www.mocky.io/v2/5926ce9d11000096006ccb30")
                 .setPriority(Priority.HIGH)
                 .build()

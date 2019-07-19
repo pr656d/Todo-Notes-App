@@ -14,7 +14,7 @@ class OnBoardingTwoFragment : Fragment() {
 
     private lateinit var textViewDone: TextView
     private lateinit var textViewBack: TextView
-    lateinit var onOptionClick: OnOptionClick
+    private lateinit var onOptionClick: OnOptionClick
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

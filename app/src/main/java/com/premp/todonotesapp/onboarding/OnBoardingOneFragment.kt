@@ -11,8 +11,8 @@ import com.premp.todonotesapp.R
 
 class OnBoardingOneFragment : Fragment() {
 
-    lateinit var textViewNext: TextView
-    lateinit var onNextClick: OnNextClick
+    private lateinit var textViewNext: TextView
+    private lateinit var onNextClick: OnNextClick
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

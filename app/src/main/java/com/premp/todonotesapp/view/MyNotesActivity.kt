@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit
 
 class MyNotesActivity : AppCompatActivity() {
 
-    internal val TAG = "MyNotesActivity"
+    private val TAG = "MyNotesActivity"
 
     private var fullName: String = ""
     private lateinit var fabAddNotes: FloatingActionButton

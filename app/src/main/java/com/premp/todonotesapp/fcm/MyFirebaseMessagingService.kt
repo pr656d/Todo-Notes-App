@@ -13,7 +13,7 @@ import com.premp.todonotesapp.R
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
-    val TAG = "FirebaseMsgService"
+    private val TAG = "FirebaseMsgService"
 
     override fun onMessageReceived(message: RemoteMessage?) {
         super.onMessageReceived(message)
@@ -30,13 +30,13 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                 .setContentTitle("Todo Notes App")
                 .setContentText(body)
                 .setSound(ringtone)
-        val noticationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
             val channel = NotificationChannel(channelId, "Todo-Notes", NotificationManager.IMPORTANCE_HIGH)
-            noticationManager.createNotificationChannel(channel)
+            notificationManager.createNotificationChannel(channel)
         }
-        noticationManager.notify(0, notificationBuilder.build())
+        notificationManager.notify(0, notificationBuilder.build())
     }
 
     override fun onNewToken(token: String?) {
