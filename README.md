@@ -1,7 +1,7 @@
 # Todo-Notes-App 
     MindOrks android beginner training course app.
 
-### Learned
+## Learned
   - Room Database
   - Fragments
   - On Boarding UI
